@@ -1,32 +1,43 @@
-# Incruiter
-
-## 🚀 Quick Setup Guide
+# 🚀 Incruiter - Quick Setup Guide
 
 Follow the steps below to set up and run the project on your local machine.
 
-```sh
-# 1️⃣ Clone the Repository
-git clone https://github.com/kYasHwaNTH1/Incruiter.git
-cd Incruiter
+## 📌 Installation & Setup
 
-# 2️⃣ Install Dependencies
-npm install
+### 1️⃣ Clone the Repository
+git clone https://github.com/kYasHwaNTH1/Incruiter.git  
+cd Incruiter  
 
-# 3️⃣ Create and Configure the .env File
-# Run this command to create the .env file
-touch .env
+### 2️⃣ Install Dependencies
+npm install  
 
-# Open the .env file and add the following environment variables:
-# Replace <values> with your actual credentials
+### 3️⃣ Configure Environment Variables
+touch .env  
 
-echo "mongodbUrl=<your_mongodb_connection_string>
-JWT_SECRET=<your_jwt_secret>
-port=<your_port_number>
-EMAIL=<your_email>
-PASSWORD=<your_app_password>" > .env
+Add the following environment variables to the `.env` file (replace `<values>` with your actual credentials):  
 
-# 4️⃣ Start the Application
-npm start
+echo "mongodbUrl=<your_mongodb_connection_string>  
+JWT_SECRET=<your_jwt_secret>  
+port=<your_port_number>  
+EMAIL=<your_email>  
+PASSWORD=<your_app_password>" > .env  
 
-# 🎯 The server will now be running at: port
-# http://localhost:<your_port_number>
+### 4️⃣ Start the Application
+npm start  
+
+Your server will now be running at:  
+👉 **http://localhost:<your_port_number>**  
+
+## 🔑 Available API Endpoints  
+
+### ✅ User Authentication Routes  
+- **POST /register** – Register a new user  
+- **POST /login** – Login and receive a JWT token  
+- **POST /changepassword** – Change user password  
+
+### 🔄 Password Reset Flow  
+1. **POST /forgotpassword** – Request a password reset link (sent via email).  
+2. **Paste the link received in your email in the postman** – This link is the endpoint for password reset.  
+3. **POST /resetpassword** – Use the link to set a new password.  
+
+✅ **You're all set!** Now, you can test the API and start building with **Incruiter**! 🚀
